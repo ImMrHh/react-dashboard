@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1f2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f3a7d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(26, 31, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+/* Card styles */
+.card {
+  @apply rounded-lg p-6 bg-surface border border-border transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/10;
+}
+
+.card-compact {
+  @apply rounded-lg p-4 bg-surface border border-border;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark;
+}
+
+.btn-primary {
+  @apply bg-accent text-white hover:bg-blue-500 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-surface border border-border text-white hover:bg-border active:scale-95;
+}
+
+.btn-ghost {
+  @apply text-accent hover:text-blue-500 hover:bg-surface/50;
+}
+
+/* Input styles */
+.input {
+  @apply w-full px-4 py-2 rounded-lg bg-surface border border-border text-white placeholder-gray-500 transition-all duration-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-success {
+  @apply bg-green-500/20 text-green-300;
+}
+
+.badge-warning {
+  @apply bg-yellow-500/20 text-yellow-300;
+}
+
+.badge-danger {
+  @apply bg-red-500/20 text-red-300;
+}
+
+.badge-info {
+  @apply bg-blue-500/20 text-blue-300;
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto;
+}
+
+.table {
+  @apply w-full border-collapse;
+}
+
+.table thead {
+  @apply border-b border-border;
+}
+
+.table th {
+  @apply px-4 py-3 text-left text-sm font-semibold text-gray-400 uppercase tracking-wide;
+}
+
+.table td {
+  @apply px-4 py-3 border-b border-border/50;
+}
+
+.table tbody tr {
+  @apply hover:bg-surface/50 transition-colors duration-150;
+}
